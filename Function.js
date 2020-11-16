@@ -55,7 +55,7 @@ function throttle(fn, delay=1000, ...args) {
 				this.age = age;
 		};
 		Parent.prototype.sayName = function () {
-			console.log(this.name);
+			console.log(this.name);   
 		};
  */
 function myNew(parent, ...args) {
