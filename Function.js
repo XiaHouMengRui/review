@@ -75,7 +75,27 @@ function create(proto) {
     F.prototype = proto;
     return new F();
 }
+// parent
+function Parent(name) {
+	this.name = name;
+}
+Parent.prototype.sayName = function(){
+	console.log(this.name)
+}
 
+// child
+function Child(name,age) {
+	Parent.call(this, name);
+	this.age = age;
+}
+
+Child.prototype = create(Parent.prototype);
+Child.prototype.construtor = child;
+
+
+// test 
+// const child = new Child('lily', 18)
+// child.sayName()
 
 
 // 5. 高阶函数 柯里化
