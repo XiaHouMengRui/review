@@ -41,7 +41,7 @@ function throttle(fn, delay=1000, ...args) {
 	}
 }
 
-// 3. 手写NEW
+// 3. 手写NEW 
 /**
  * new一个对象的过程
  * 以构造器的prototype属性为原型，创建新对象
