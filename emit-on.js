@@ -17,7 +17,7 @@ let person = {};
 
 let events = new EventEmitter();
 
-events.on(()=>{
+events.on(()=>{ 
     if (Object.keys(person).length == 2){
       console.log(person)
     } else {
