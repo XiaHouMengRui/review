@@ -5,7 +5,7 @@ Function.prototype.mycall = function (context) {
     context = context || window;
     context.fn = this;
     let arg = [...arguments].slice(1);
-    let result = context.fn(arg)
+    let result = context.fn(...arg)
     delete context.fn
     return result
 }
@@ -114,6 +114,16 @@ function sum(a, b, c, d) {
     return a + b + c + d
 }
 
+var curr = function(fn) {
+    var exec = function(sumarr = []) {
+        if(sumarr.length >= fn.length) {
+            return fn(...sumarr)
+        } else {
+            return (...args)=>exec([...sumarr, ...args])
+        }
+    }
+    return exec()
+}
 
 // 异步并发数限制
 /**
